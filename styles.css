@@ -233,6 +233,92 @@ main section img{
     transform: scale(1.1);
 
 }
+form {
+    /* Center the form on the page */
+    margin: 0 auto;
+    width: 400px;
+    /* Form outline */
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  form li + li {
+    margin-top: 1em;
+  }
+  
+  label {
+    /* Uniform size & alignment */
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+  }
+  
+  input,
+  textarea {
+    /* To make sure that all text fields have the same font settings
+       By default, textareas have a monospace font */
+    font: 1em sans-serif;
+  
+    /* Uniform text field size */
+    width: 300px;
+    box-sizing: border-box;
+  
+    /* Match form field borders */
+    border: 1px solid #999;
+  }
+  
+  input:focus,
+  textarea:focus {
+    /* Additional highlight for focused elements */
+    border-color: #000;
+  }
+  
+  textarea {
+    /* Align multiline text fields with their labels */
+    vertical-align: top;
+  
+    /* Provide space to type some text */
+    height: 5em;
+  }
+  
+  .button {
+    /* Align buttons with the text fields */
+    padding-left: 90px; /* same size as the label elements */
+  }
+  
+  button {
+    /* This extra margin represent roughly the same space as the space
+       between the labels and their text fields */
+    margin-left: 0.5em;
+    border-radius: 5%;
+    border: 1px solid black;
+    width: 150px;
+    height: 40px;
+
+  }
+.top {
+  margin-bottom: 30px;
+}  
+#feedback {
+    background-color: antiquewhite;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: .5em;
+    /* make this element invisible until we are ready for it */
+    display: none;      
+}
+.moveDown {
+    margin-top: 3em;
+}
 
 @media screen and (max-width: 900px) {
     #hero, .home-grid {
@@ -363,4 +449,61 @@ main section img{
 
 .bottom-raft{
     margin-top: 0;
+}
+
+@media screen and(max-width:900px) {
+    
+:root{
+    --background:#3C343D ;
+    --background-card: #6B626C;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.background{
+    background-color: var(--background);
+    display: grid;
+    place-items: center;
+    height: 90vh;
+}
+.gallery{
+    display: flex;
+    left: calc(50% - 330px);
+}
+
+.card{
+    position: relative;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background-color: var(--background-card);
+    border-radius: 8px;
+    transition: 1s ease-in-out;
+    overflow: hidden;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5);
+}
+
+.card :not(:first-child){
+    margin-left: -45px;
+}
+
+.card:hover{
+    transform: translateY(-16px);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.card:hover ~ .card{
+    left: 55px;
+}
+
+.card img{
+    height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+    
 }
